@@ -14,7 +14,8 @@ score = 0
 # Sample Questions
 questions = [
     Question("What is the constituent's name? Please format your answer as a Python string variable.", 'name="Oliver"'),
-    Question("What is this candidate's platform? You may answer this in plain text.", "The Best")
+    Question("What is this candidate's platform? You may answer this in plain text.", "The Best"),
+    Question("Determine as a boolean whether we should legalize catnip.", "True")
 ]
 
 progress = 0
@@ -59,7 +60,7 @@ def submit():
         score += 1
         progress += 1
     else:
-        feedback = "Not Quite."
+        feedback = "Not quite, try again!"
 
     if progress < len(questions):
         next_question = questions[progress]
@@ -67,11 +68,6 @@ def submit():
     else:
         return jsonify({"feedback": feedback, "score": score})
 
-    
-    # Return feedback as JSON
-    # return jsonify({"feedback": feedback, "score": score})
-
-
-
+# App Initiation
 if __name__ == '__main__':
     app.run(debug=True)
