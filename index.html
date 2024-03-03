@@ -11,7 +11,7 @@
 
               background-size: cover;
 
-              height: 100px;
+              height: 75px;
 
               text-align: center;
 
@@ -67,6 +67,24 @@
 
           }
 
+          .button-container {
+              margin-top: 10px; 
+              position: relative; 
+
+          }
+          .button-run,.button-reset, .button-nextpage {
+              padding: 10px 20px; 
+              margin: 0 5px; 
+              left: 15%;
+              background-color: #007bff; 
+              color: #fff;
+              border: none;
+              border-radius: 5px; /* Add border radius for rounded corners */
+              cursor: pointer; /* Change cursor to pointer on hover */
+              
+            
+        }
+
           /* .decorativebox {
             height: 450px;
             width: calc(50% - 100px);
@@ -82,9 +100,11 @@
           .overlay-image {
             position: absolute;
             bottom: 0;
-            right: 0%;  
+            right: 5%;  
             transform: translateX(-50%);
             z-index: 1;
+            width: 350px; 
+            height: auto;
           }
 
             
@@ -117,8 +137,14 @@
 
         </div>
 
+        <div class="button-container">
+          <button class="button-run">Run</button>
+          <button class="button-reset">Reset</button>
+          <button class="button-nextpage">Next</button>
         </div>
-          <img src="catprez.png" class="overlay-image">
+
+        </div>
+          <img src="catprezpodiumfixed.png" class="overlay-image">
         </div>
 
     </body>
