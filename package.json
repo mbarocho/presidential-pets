@@ -6,6 +6,7 @@
     "http-server": "^14.1.1"
   },
   "scripts": {
+    "build": "pip install flask",
     "start": "python polling.py"
   },
   "description": "",

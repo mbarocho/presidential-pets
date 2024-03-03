@@ -3,25 +3,28 @@ function resetAnswer() {
     document.getElementById("input-box").value = "";
 }
 
+// Function to update the "Feedback" and "Score" sections dynamically
 function submitForm() {
-    document.getElementById("submission").submit();
+    var form = document.getElementById('submission');
+    var formData = new FormData(form);
 
-    // Make a POST request to the Flask route
-    fetch('/submit', {
-        method: 'POST',
-        body: new URLSearchParams({
-            'user_guess': userGuess
-        }),
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/submit', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            document.getElementById('feedback').innerText = response.feedback;
+            if (response.feedback === "That's right!") { // This if statement will update the function and resets the input box after 3 seconds if an answer is correct.
+                document.getElementById('score').innerText = response.score;
+                setTimeout(function() {
+                    resetAnswer();
+                    document.getElementById('question').innerText = response.question;
+                    document.getElementById('feedback').innerText = '';
+                    }, 3000);
+            }
+            
         }
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Display feedback
-        document.getElementById("feedback").innerText = data.feedback;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    };
+    xhr.send(new URLSearchParams(formData)); // Send form data as URLSearchParams
 }
