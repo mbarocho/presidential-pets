@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "pip install flask",
-    "start": "python polling.py"
+    "start": "python navigator.py"
   },
   "description": "",
   "main": "index.js",

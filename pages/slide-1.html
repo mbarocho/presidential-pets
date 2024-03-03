@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Page Background Image</title>
-    <style>
-        html {
-            background-image: url("../presidential-pets/page1.png");
-            background-size: contain;
-            background-position: center;
-            height: 100%;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Full Page Background Image</title>
+        <style>
+            html {
+                background-image: url("../static/page1.png");
+                background-size: contain;
+                background-position: center;
+                height: 100%;
+            }
 
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-        }
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+            }
 
 
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content"></div>
         
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="content"></div>
-    
-    </div>
-</body>
+        </div>
+
+        <script>
+            document.body.onkeyup = function(e){
+                if(e.keyCode == 32){
+                    // Spacebar key was pressed
+                    window.location.href = "/page-2";
+                }
+            }
+        </script>
+    </body>
 </html>
 

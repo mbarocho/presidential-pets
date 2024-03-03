@@ -44,7 +44,8 @@ def index():
     Oliver = Pet("Oliver", 10, "Cat", "The Best")
     if progress < len(questions):
         current_question = questions[progress]
-        return render_template('index.html', oliver=Oliver, score=score, question=current_question)
+        # return render_template('index.html', oliver=Oliver, score=score, question=current_question)
+        return render_template('slide1.html')
 
 # Runs when user submits an answer
 @app.route('/submit', methods=['POST'])

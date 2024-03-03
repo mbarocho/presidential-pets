@@ -6,7 +6,7 @@
     <title>Full Page Background Image</title>
     <style>
         html {
-            background-image: url("../presidential-pets/11.png");
+            background-image: url("../static/11.png");
             background-size: contain;
             background-position: center;
             height: 100%;
@@ -48,13 +48,22 @@
         }
 
         .input-box {
-            width: 100%;
+            /* width: 100%;
             height: 100%;
             box-sizing: border-box; 
             padding: 20px; 
             border: none; 
             font-size: 16px; 
-            resize: none; 
+            resize: none;  */
+
+            height: 450px;
+            width: calc(50% - 100px); 
+            margin: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            /* Adjust spacing between banner and input box */
+            display: inline-block;
+            box-sizing: border-box;
         }
 
         .button-container {
@@ -82,11 +91,47 @@
             <textarea class="input-box" placeholder="Enter text or code here..."></textarea>
         </div>
 
+        <p style="float: left; margin-left: 50px; font-size: 24px; text-align: left;">
+            Feedback: <span id="feedback">{{ feedback }}</span>
+        </p>
+
         <div class="button-container">
             <button class="button-run">Run</button>
             <button class="button-reset">Reset</button>
             <button class="button-nextpage">Next</button>
         </div>
     </div>
+
+    <script>
+        // Function to reset the user's answer
+        function resetAnswer() {
+            document.getElementById("input-box").value = "";
+        }
+
+        // Function to update the "Feedback" and "Score" sections dynamically
+        function submitForm() {
+            var form = document.getElementById('submission');
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/submit', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    document.getElementById('feedback').innerText = response.feedback;
+                    if (response.feedback === "That's right!") { // This if statement will update the function and resets the input box after 3 seconds if an answer is correct.
+                        document.getElementById('score').innerText = response.score;
+                        setTimeout(function() {
+                            resetAnswer();
+                            window.location.href = "/page-12";
+                            }, 3000);
+                    }
+                    
+                }
+            };
+            xhr.send(new URLSearchParams(formData)); // Send form data as URLSearchParams
+        }
+    </script>
 </body>
 </html>
