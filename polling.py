@@ -16,7 +16,7 @@ score = 0
 def index():
     Oliver = Pet("Oliver", 10, "Cat", "The Best")
     Lucy = Pet("Lucy", 13, "Cat", "A loyal and caring gray cat!")
-    return render_template('index.html', oliver=Oliver, lucy=Lucy, score=score)
+    return render_template('index-test.html', oliver=Oliver, lucy=Lucy, score=score)
 
 @app.route('/submit', methods=['POST'])
 def submit():
