@@ -1,9 +1,152 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="design.css" rel="stylesheet">
+<html lang="en"></html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            .header {
+
+              background-image: url("black-cat.png");
+
+              background-size: cover;
+
+              height: 75px;
+
+              text-align: center;
+
+              color: white;
+
+              padding-top: 30px;
+
+              font-size: 10px;
+
+            }
+
+          .banner {
+            height: 75px; /* Adjust height as needed */
+            background-color: #fff; /* Adjust background color as needed */
+          }
+  
+          .container {
+            text-align: center;
+            position: relative;
+          }
+          
+          .prompt-info, .textbox-facts {
+
+            height: 40px;
+            width: calc(50% - 100px); 
+            margin: 10px;
+            margin-bottom: 0;
+            /* Adjust spacing between banner and input box */
+            display: inline-block;
+            box-sizing: border-box;
+            
+
+
+          }
+
+          .prompt-info {
+            background-color: lightgray;
+          }
+
+          .textbox-facts {
+            background-color: tomato;
+          }
+
+          .input-box, .decorativebox { 
+            height: 450px;
+            width: calc(50% - 100px); 
+            margin: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            /* Adjust spacing between banner and input box */
+            display: inline-block;
+            box-sizing: border-box;
+
+          }
+
+          .button-container {
+              margin-top: 10px; 
+              position: relative; 
+
+          }
+          .button-run,.button-reset, .button-nextpage {
+              padding: 10px 20px; 
+              margin: 0 5px; 
+              left: 15%;
+              background-color: #007bff; 
+              color: #fff;
+              border: none;
+              border-radius: 5px; /* Add border radius for rounded corners */
+              cursor: pointer; /* Change cursor to pointer on hover */
+              
+            
+        }
+
+          /* .decorativebox {
+            height: 450px;
+            width: calc(50% - 100px);
+            margin: 10px; 
+            background-color: tomato;
+            display: inline-block;
+          } */
+
+          .decorativebox {
+            background-color: tomato;
+          }
+
+          .overlay-image {
+            position: absolute;
+            bottom: 0;
+            right: 5%;  
+            transform: translateX(-50%);
+            z-index: 1;
+            width: 350px; 
+            height: auto;
+          }
+
+            
+
+         </style>
+
+
+
+        <!--<link href="design.css" rel="stylesheet">-->
     </head>
     <body>
 
+      <body>
+        <div class="header">
+          Header with Graphic
+        </div>
+
+        <div class="banner"></div>
+        <div class="container">
+          
+          <div class="prompt-info">
+            This is where prompt information will go 
+          </div>
+          <div class="textbox-facts">
+            Add info for each stage / question 
+          </div>
+          <div class="input-container">
+            <textarea class="input-box" placeholder="Enter text or code here..."></textarea>
+          <div class="decorativebox"></div>
+
+        </div>
+
+        <div class="button-container">
+          <button class="button-run">Run</button>
+          <button class="button-reset">Reset</button>
+          <button class="button-nextpage">Next</button>
+        </div>
+
+        </div>
+          <img src="catprezpodiumfixed.png" class="overlay-image">
+        </div>
+
     </body>
+
 </html>
