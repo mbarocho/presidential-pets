@@ -104,46 +104,45 @@
          </style> -->
     </head>
     <body>
+      <div class="header">
+        Header with Graphic
+      </div>
 
-      <body>
-        <div class="header">
-          Header with Graphic
+      <div class="banner"></div>
+      <div class="container">
+        
+        <div class="prompt-info">
+          <p><span id="question">{{ question.text }}</span></p>
         </div>
-
-        <div class="banner"></div>
-        <div class="container">
-          
-          <div class="prompt-info">
-            <p>This is where prompt information will go</p>
-          </div>
-          <div class="textbox-facts">
-            <!-- <p>Add info for each stage / question </p> -->
-            <p style="font-weight: bold; font-size: 16px;">{{ oliver.name }}</p>
-          </div>
-          <div class="input-container">
-            <form id="submission" action="/submit" method="POST" class="input-box">
-              <textarea style="height: 99%; width: 99.35%" name="user_guess" id="input-box" placeholder="Enter text or code here..."></textarea>
-            </form>
-          <div class="decorativebox" style="height: 451.5px;">
-          </div>
+        <div class="textbox-facts">
+          <!-- <p>Add info for each stage / question </p> -->
+          <p style="font-weight: bold; font-size: 16px;">{{ oliver.name }}</p>
         </div>
-
-        <div class="button-container">
-          <button class="button-run" onclick="submitForm()">Run</button>
-          <button class="button-reset" onclick="resetAnswer()">Reset</button>
-          <button class="button-nextpage">Next</button>
+        <div class="input-container">
+          <form id="submission" action="/submit" method="POST" class="input-box">
+            <textarea style="height: 99%; width: 99.35%" name="user_guess" id="input-box" placeholder="Enter text or code here..."></textarea>
+          </form>
+        <div class="decorativebox" style="height: 451.5px;">
         </div>
+      </div>
 
-        <p style="float: left; margin-left: 50px; font-size: 24px; text-align: left;">Score: {{ score }}<br>
-        Feedback: {{ feedback }}</p>
+      <div class="button-container">
+        <button class="button-run" onclick="submitForm()">Run</button>
+        <button class="button-reset" onclick="resetAnswer()">Reset</button>
+        <button class="button-nextpage">Next</button>
+      </div>
 
-        </div>
-          <img src="{{ url_for('static', filename='catprezpodiumfixed.png') }}" class="overlay-image">
-        </div>
+      <p style="float: left; margin-left: 50px; font-size: 24px; text-align: left;">
+      Score: <span id="score">{{ score }}</span><br>
+      Feedback: <span id="feedback">{{ feedback }}</span></p>
 
-        <script src="{{ url_for('static', filename='src/functions.js') }}"></script>
+      </div>
+        <img src="{{ url_for('static', filename='catprezpodiumfixed.png') }}" class="overlay-image">
+      </div>
 
-        <link src="../static/src/functions.js">
+      <script src="{{ url_for('static', filename='src/functions.js') }}"></script>
+
+      <link src="../static/src/functions.js">
     </body>
 
 </html>

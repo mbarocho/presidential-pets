@@ -6,7 +6,8 @@
     "http-server": "^14.1.1"
   },
   "scripts": {
-    "start": "python pets.py"
+    "build": "pip install flask",
+    "start": "python polling.py"
   },
   "description": "",
   "main": "index.js",
