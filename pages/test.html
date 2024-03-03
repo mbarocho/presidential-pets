@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+        <style>
+            .characters {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .candidate {
+                width: 23%;
+                border: 2px solid black;
+                border-radius: 5px;
+                text-align: center;
+                padding: 15px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="characters">
+            <div class="candidate">
+                <h1>{{ ada.name }}</h1>
+                <p>Age: {{ ada.age }}</p>
+                <p>Animal: {{ ada.animal }}</p>
+                <p>{{ ada.platform }}</p>
+            </div>
+            <div class="candidate">
+                <h1>{{ lucy.name }}</h1>
+                <p>Age: {{ lucy.age }}</p>
+                <p>Animal: {{ lucy.animal }}</p>
+                <p>{{ lucy.platform }}</p>
+            </div>
+        </div>
+    </body>
+</html>
