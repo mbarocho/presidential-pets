@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, template_folder='pages');
 
@@ -24,11 +24,13 @@ def submit():
     user_guess = request.form['user_guess']
     # Do something with candidate_name
     if (user_guess == ('name="' + candidate.name + '"')):
-        return "That's right!"
-        global score
-        score += 1
+        feedback = "That's right!"
     else:
-        return "Not Quite."
+        feedback = "Not Quite."
+    
+    # Return feedback as JSON
+    return jsonify({"feedback": feedback})
+
 
 
 if __name__ == '__main__':

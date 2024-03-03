@@ -6,34 +6,26 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
         <!-- <style>
 
-            .header {
-
-              background-image: url("../static/black-cat.png");
-
-              background-size: cover;
-
-              height: 75px;
-
-              text-align: center;
-
-              color: white;
-
-              padding-top: 30px;
-
-              font-size: 10px;
-
-            }
+          .header {
+            background-image: url("../static/black-cat.png");
+            background-size: cover;
+            height: 75px;
+            text-align: center;
+            color: white;
+            padding-top: 30px;
+            font-size: 10px;
+          }
 
           .banner {
             height: 75px; /* Adjust height as needed */
             background-color: #fff; /* Adjust background color as needed */
           }
-  
+
           .container {
             text-align: center;
             position: relative;
           }
-          
+
           .prompt-info, .textbox-facts {
 
             height: 40px;
@@ -43,9 +35,6 @@
             /* Adjust spacing between banner and input box */
             display: inline-block;
             box-sizing: border-box;
-            
-
-
           }
 
           .prompt-info {
@@ -65,14 +54,26 @@
             /* Adjust spacing between banner and input box */
             display: inline-block;
             box-sizing: border-box;
-
           }
+
 
           .button-container {
               margin-top: 10px; 
               position: relative; 
-
           }
+
+          .button-container button:hover {
+            background-color: #005ec2; 
+          }
+
+          .button-container button:active {
+            background: #005ec2;
+            -webkit-box-shadow: inset 0px 0px 5px #1c1c1c;
+              -moz-box-shadow: inset 0px 0px 5px #1c1c1c;
+                    box-shadow: inset 0px 0px 5px #1c1c1c;
+            outline: none;
+          }
+
           .button-run,.button-reset, .button-nextpage {
               padding: 10px 20px; 
               margin: 0 5px; 
@@ -82,17 +83,7 @@
               border: none;
               border-radius: 5px; /* Add border radius for rounded corners */
               cursor: pointer; /* Change cursor to pointer on hover */
-              
-            
-        }
-
-          /* .decorativebox {
-            height: 450px;
-            width: calc(50% - 100px);
-            margin: 10px; 
-            background-color: tomato;
-            display: inline-block;
-          } */
+          }
 
           .decorativebox {
             background-color: tomato;
@@ -111,8 +102,6 @@
             
 
          </style> -->
-
-        <!--<link href="design.css" rel="stylesheet">-->
     </head>
     <body>
 
@@ -145,7 +134,8 @@
           <button class="button-nextpage">Next</button>
         </div>
 
-        <p style="float: left; margin-left: 50px; font-size: 24px;">Score: {{ score }}</p>
+        <p style="float: left; margin-left: 50px; font-size: 24px; text-align: left;">Score: {{ score }}<br>
+        Feedback: {{ feedback }}</p>
 
         </div>
           <img src="{{ url_for('static', filename='catprezpodiumfixed.png') }}" class="overlay-image">
