@@ -46,7 +46,6 @@ def index():
         current_question = questions[progress]
         return render_template('index.html', oliver=Oliver, score=score, question=current_question)
 
-
 # Runs when user submits an answer
 @app.route('/submit', methods=['POST'])
 def submit():
